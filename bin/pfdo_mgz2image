@@ -19,7 +19,7 @@ import  pfmisc
 from    pfmisc._colors      import Colors
 from    pfmisc              import other
 
-str_version = "1.2.8"
+str_version = "1.2.10"
 str_desc = Colors.CYAN + """
 
         __    _                           _  _____  _
@@ -92,10 +92,10 @@ def synopsis(ab_shortOnly = False):
 
     BRIEF EXAMPLE
 
-        pfdo_mgz2image                                      \\
-            -I /var/www/html/data --filter nii              \\
-            -O /var/www/html/jpg                            \\
-            -t jpg                                          \\
+        pfdo_mgz2image                                                          \\
+            -I /var/www/html/data --filter mgz                                  \\
+            -O /var/www/html/jpg                                                \\
+            -t jpg                                                              \\
             --threads 0 --printElapsedTime
     """
 
