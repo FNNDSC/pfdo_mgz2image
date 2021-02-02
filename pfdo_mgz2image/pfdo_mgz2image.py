@@ -178,7 +178,6 @@ class pfdo_mgz2image(pfdo.pfdo):
 
         # pudb.set_trace()
         mgz2image_args                  = self.args.copy()
-
         # print(at_data)
 
         for str_file in l_fileToAnalyze_determine(l_fileProbed):
@@ -190,13 +189,19 @@ class pfdo_mgz2image(pfdo.pfdo):
                                             )
 
             mgz2image_args['outputDir'] = os.path.join(mgz2image_args['outputDir'], str_file)
-            os.mkdir(mgz2image_args['outputDir'])
+            other.mkdir(mgz2image_args['outputDir'])
 
             mgz2image_args['saveImages']    = self.args['saveImages']
             mgz2image_args['skipAllLabels'] = self.args['skipAllLabels']
 
             mgz2image_ns    = Namespace(**mgz2image_args)
-            imgConverter    = mgz2imgslices.object_factoryCreate(mgz2image_ns).C_convert
+
+            # Note that the imgConverter has an implicit assumption on an existing
+            # /usr/src/FreeSurferColorLUT.txt!
+            try:
+                imgConverter    = mgz2imgslices.object_factoryCreate(mgz2image_ns).C_convert
+            except Exception as e:
+                self.dp.qprint(e, comms = 'error', level = 0)
 
             # At time of dev, the `imgConverter.run()` does not return anything.
             imgConverter.run()
