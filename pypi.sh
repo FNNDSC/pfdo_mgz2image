@@ -30,9 +30,9 @@ fi
 VER=$1
 
 git commit -am "v${VER}"
-git push origin master
+git push 
 git tag $VER
-git push origin --tags
+git push --tags
 
 rstcheck README.rst
 python3 setup.py sdist
