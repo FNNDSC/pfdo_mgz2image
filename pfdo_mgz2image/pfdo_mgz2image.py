@@ -67,7 +67,7 @@ class pfdo_mgz2image(pfdo.pfdo):
         """
         This method does not actually read in any files, but
         exists to preserve the list of files associated with a
-        given input directory. 
+        given input directory.
 
         By preserving and returning this file list, the next
         callback function in this pipeline is able to receive an
@@ -165,7 +165,7 @@ class pfdo_mgz2image(pfdo.pfdo):
         l_fileProbed        : list  = []
         d_inputReadCallback : dict  = {}
         d_convert           : dict  = {}
-        
+
 
         for k, v in kwargs.items():
             if k == 'path':         str_path    = v
@@ -178,22 +178,22 @@ class pfdo_mgz2image(pfdo.pfdo):
 
         # pudb.set_trace()
         mgz2image_args                  = self.args.copy()
-        
+
         # print(at_data)
 
         for str_file in l_fileToAnalyze_determine(l_fileProbed):
             mgz2image_args['inputDir']      = str_path
             mgz2image_args['inputFile']     = str_file
             mgz2image_args['outputDir']     = str_path.replace(
-                                                self.args['inputDir'], 
+                                                self.args['inputDir'],
                                                 self.args['outputDir']
                                             )
 
             mgz2image_args['outputDir'] = os.path.join(mgz2image_args['outputDir'], str_file)
             os.mkdir(mgz2image_args['outputDir'])
 
-            mgz2image_args['saveImages']    = self.args['saveImages']  
-            mgz2image_args['skipAllLabels'] = self.args['skipAllLabels']  
+            mgz2image_args['saveImages']    = self.args['saveImages']
+            mgz2image_args['skipAllLabels'] = self.args['skipAllLabels']
 
             mgz2image_ns    = Namespace(**mgz2image_args)
             imgConverter    = mgz2imgslices.object_factoryCreate(mgz2image_ns).C_convert
@@ -285,7 +285,7 @@ class pfdo_mgz2image(pfdo.pfdo):
 
         if b_timerStart:    other.tic()
 
-        pudb.set_trace()
+        # pudb.set_trace()
         d_pfdo          = super().run(
                             JSONprint   = False,
                             timerStart  = False
