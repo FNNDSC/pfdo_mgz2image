@@ -19,7 +19,7 @@ import  pfmisc
 from    pfmisc._colors      import Colors
 from    pfmisc              import other
 
-str_version = "1.2.6"
+str_version = "1.2.8"
 str_desc = Colors.CYAN + """
 
         __    _                           _  _____  _
@@ -400,7 +400,7 @@ parser.add_argument('-n', '--normalize',
 parser.add_argument('-l', '--lookupTable',
                     help='file contain text string lookups for voxel values',
                     dest='lookupTable',
-                    default = '__val__'
+                    default = '__none__'
                     )
 parser.add_argument('--skipAllLabels',
                     help='skip all labels and create only whole Volume images',
