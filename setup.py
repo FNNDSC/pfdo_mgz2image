@@ -12,17 +12,22 @@ def readme():
 
 setup(
       name             =   'pfdo_mgz2image',
-      version          =   '1.2.14',
+      version          =   '2.0.0',
       description      =   'Runs mgz2image on each nested dir of an inputdir',
       long_description =   readme(),
       author           =   'FNNDSC',
       author_email     =   'dev@babymri.org',
       url              =   'https://github.com/FNNDSC/pfdo_mgz2image',
       packages         =   ['pfdo_mgz2image'],
-      install_requires =   ['pfmisc', 'pftree', 'pfdo', 'mgz2imgslices', 'nibabel', 'pandas', 'numpy', 'imageio', 'matplotlib'],
+      install_requires =   ['pfmisc', 'pftree', 'pfdo', 'mgz2imgslices', 'scikit-image', 'nibabel', 'pandas', 'numpy', 'imageio', 'matplotlib'],
       #test_suite       =   'nose.collector',
       #tests_require    =   ['nose'],
-      scripts          =   ['bin/pfdo_mgz2image'],
+      #scripts          =   ['bin/pfdo_mgz2image'],
       license          =   'MIT',
+      entry_points={
+          'console_scripts': [
+              'pfdo_mgz2image = pfdo_mgz2image.__main__:main'
+          ]
+      },
       zip_safe         =   False
 )
