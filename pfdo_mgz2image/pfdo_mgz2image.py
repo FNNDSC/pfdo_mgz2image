@@ -14,8 +14,8 @@ from        pfmisc._colors      import  Colors
 from        pfmisc              import  other
 from        pfmisc              import  error
 
-from        mgz2imgslices     import  mgz2imgslices
-import      pfdo
+from        mgz2imgslices       import  mgz2imgslices
+from        pfdo                import  pfdo
 
 import      pudb
 import      pftree

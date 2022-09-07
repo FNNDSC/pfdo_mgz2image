@@ -26,7 +26,6 @@ import  pfmisc
 from    pfmisc._colors      import Colors
 from    pfmisc              import other
 
-str_version = "1.2.14"
 str_desc = Colors.CYAN + """
         __    _                             _____ _
        / _|  | |                           / __  (_)
@@ -47,7 +46,7 @@ str_desc = Colors.CYAN + """
 
 
                              -- version """ + \
-             Colors.YELLOW + str_version + Colors.CYAN + """ --
+             Colors.YELLOW + __version__ + Colors.CYAN + """ --
 
         'pfdo_mgz2image' demonstrates how to use ``pftree`` to transverse
         directory trees and execute a ``mgz2image`` analysis at each directory
@@ -189,7 +188,8 @@ def synopsis(ab_shortOnly = False):
 
 
 
-parser  = ArgumentParser(description = str_desc, formatter_class = RawTextHelpFormatter)
+parser              = pfdo_main.parser
+parser.description  = str_desc
 
 parser.add_argument("--analyzeFileIndex",
                     help    = "file index per directory to analyze",
@@ -237,7 +237,7 @@ parser.add_argument('-s', '--skipLabelValueList',
                     dest='skipLabelValueList',
                     default = ''
                     )
-parser.add_argument('-f', '--filterLabelValueList',
+parser.add_argument('--filterLabelValueList',
                     help='Comma separated list of voxel values to include',
                     dest='filterLabelValueList',
                     default = "-1"
