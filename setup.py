@@ -12,7 +12,7 @@ def readme():
 
 setup(
       name             =   'pfdo_mgz2image',
-      version          =   '2.0.0',
+      version          =   '2.0.2',
       description      =   'Runs mgz2image on each nested dir of an inputdir',
       long_description =   readme(),
       author           =   'FNNDSC',
