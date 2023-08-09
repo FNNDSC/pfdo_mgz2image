@@ -188,7 +188,7 @@ def synopsis(ab_shortOnly = False):
 
 
 
-parser              = pfdo_main.parserSelf
+parser              = pfdo_main.parserSA
 parser.description  = str_desc
 
 # mgz2image additional CLI flags
@@ -266,7 +266,7 @@ def main(argv = None):
     args.str_version    = __version__
     args.str_desc       = synopsis(True)
 
-    pf_do_mgz2image     = pfdo_mgz2image.pfdo_mgz2image(vars(args))
+    pf_do_mgz2image     = pfdo_mgz2image(vars(args))
 
     # And now run it!
     # pudb.set_trace()

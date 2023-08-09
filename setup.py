@@ -8,7 +8,7 @@ def readme():
 
 setup(
         name                =   'pfdo_mgz2image',
-        version             =   '2.1.3',
+        version             =   '2.1.4',
         description         =   'Runs mgz2image on each nested dir of an inputdir',
         long_description    =   readme(),
         python_requires     =   ">= 3.8",
