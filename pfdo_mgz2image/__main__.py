@@ -69,9 +69,9 @@ package_CLI = '''
         [-s|--skipLabelValueList <ListOfVoxelValuesToSkip>]         \\
         [-f|--filterLabelValueList <ListOfVoxelValuesToInclude>]    \\
         [-w|--wholeVolume <wholeVolDirName>]                        \\'''+\
-        pfdo_main.package_CLIself
+        pfdo_main.package_CLIfull
 
-package_argSynopsis = pfdo_main.package_argSynopsisSelf + '''
+package_argSynopsis = pfdo_main.package_argsSynopsisFull + '''
         [--saveImages]
         If specified as True(boolean), will save the slices of the mgz file as
         ".png" image files along with the numpy files.

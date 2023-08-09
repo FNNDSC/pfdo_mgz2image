@@ -1,4 +1,4 @@
-pfdo_mgz2image 2.1.2
+pfdo_mgz2image 2.1.3
 =====================
 
 .. image:: https://badge.fury.io/py/pfdo_mgz2image.svg
