@@ -69,7 +69,7 @@ package_CLI = '''
         [-s|--skipLabelValueList <ListOfVoxelValuesToSkip>]         \\
         [-f|--filterLabelValueList <ListOfVoxelValuesToInclude>]    \\
         [-w|--wholeVolume <wholeVolDirName>]                        \\'''+\
-        pfdo_main.package_CLI
+        pfdo_main.package_CLIself
 
 package_argSynopsis = pfdo_main.package_argSynopsis + '''
         [--saveImages]
