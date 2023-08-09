@@ -191,11 +191,6 @@ def synopsis(ab_shortOnly = False):
 parser              = pfdo_main.parserSelf
 parser.description  = str_desc
 
-parser.add_argument("--analyzeFileIndex",
-                    help    = "file index per directory to analyze",
-                    dest    = 'analyzeFileIndex',
-                    default = '-1')
-
 # mgz2image additional CLI flags
 parser.add_argument("-o", "--outputFileStem",
                     help    = "output file",
