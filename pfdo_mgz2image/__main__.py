@@ -71,7 +71,7 @@ package_CLI = '''
         [-w|--wholeVolume <wholeVolDirName>]                        \\'''+\
         pfdo_main.package_CLIself
 
-package_argSynopsis = pfdo_main.package_argSynopsis + '''
+package_argSynopsis = pfdo_main.package_argSynopsisSelf + '''
         [--saveImages]
         If specified as True(boolean), will save the slices of the mgz file as
         ".png" image files along with the numpy files.
@@ -188,7 +188,7 @@ def synopsis(ab_shortOnly = False):
 
 
 
-parser              = pfdo_main.parser
+parser              = pfdo_main.parserSelf
 parser.description  = str_desc
 
 parser.add_argument("--analyzeFileIndex",
