@@ -11,12 +11,8 @@ import sys, os
 
 import  pfdo.__main__       as pfdo_main
 import  pfdo
-try:
-    from    .               import pfdo_mgz2image
-    from    .               import __pkg, __version__
-except:
-    from pfdo_mgz2image     import pfdo_mgz2image
-    from __init__           import __pkg, __version__
+from pfdo_mgz2image.pfdo_mgz2image import pfdo_mgz2image
+from pfdo_mgz2image import __pkg, __version__
 
 from    argparse            import RawTextHelpFormatter
 from    argparse            import ArgumentParser

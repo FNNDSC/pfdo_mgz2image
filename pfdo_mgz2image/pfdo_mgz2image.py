@@ -13,8 +13,7 @@ import      pfmisc
 from        pfmisc._colors      import  Colors
 from        pfmisc              import  other
 from        pfmisc              import  error
-
-from        mgz2imgslices       import  mgz2imgslices
+from mgz2imgslices.mgz2imgslices import object_factoryCreate
 from        pfdo                import  pfdo
 
 import      pudb
@@ -147,6 +146,7 @@ class pfdo_mgz2image(pfdo.pfdo):
 
             l_fileToAnalyze:    list    = []
             if len(l_fileProbed):
+                if self.args['analyzeFileIndex'] == 'a': l_fileToAnalyze = l_fileProbed
                 if self.args['analyzeFileIndex'] == 'f': l_fileToAnalyze.append(l_fileProbed[0])
                 if self.args['analyzeFileIndex'] == 'l': l_fileToAnalyze.append(l_fileProbed[-1])
                 if self.args['analyzeFileIndex'] == 'm':
@@ -194,12 +194,14 @@ class pfdo_mgz2image(pfdo.pfdo):
             mgz2image_args['saveImages']    = self.args['saveImages']
             mgz2image_args['skipAllLabels'] = self.args['skipAllLabels']
 
+
             mgz2image_ns    = Namespace(**mgz2image_args)
+
 
             # Note that the imgConverter has an implicit assumption on an existing
             # /usr/src/FreeSurferColorLUT.txt!
             try:
-                imgConverter    = mgz2imgslices.object_factoryCreate(mgz2image_ns).C_convert
+                imgConverter    = object_factoryCreate(mgz2image_ns).C_convert
             except Exception as e:
                 self.dp.qprint(e, comms = 'error', level = 0)
 
@@ -305,7 +307,6 @@ class pfdo_mgz2image(pfdo.pfdo):
             'd_mgz2image':      d_mgz2image,
             'runTime':          other.toc()
         }
-
         if self.args['json']:
             self.ret_dump(d_ret, **kwargs)
         else:
