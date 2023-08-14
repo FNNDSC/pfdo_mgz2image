@@ -8,7 +8,7 @@ def readme():
 
 setup(
         name                =   'pfdo_mgz2image',
-        version             =   '2.1.6',
+        version             =   '2.1.7',
         description         =   'Runs mgz2image on each nested dir of an inputdir',
         long_description    =   readme(),
         python_requires     =   ">= 3.8",
@@ -21,7 +21,7 @@ setup(
             'pfmisc',
             'pftree',
             'pfdo',
-            'mgz2imgslices==2.1.1',
+            'mgz2imgslices==2.1.2',
             'scikit-image',
             'nibabel',
             'pandas',
